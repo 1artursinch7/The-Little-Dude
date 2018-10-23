@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My shhopping list</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body {
+		background-color: #0B9D0B;
+
+	}
+		li {
+			margin-bottom: 10px;
+		}
+		li button {
+			margin-left: 20px;
+			font-size: 8px;
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+		<h1>Напишите сюда свои дела по дому и по мере выполнения удаляйте их из списка.</h1>
+
+	<div>
+		<label for="item">Enter a new item:</label>
+		<input type="text" name="item" id="item">
+		<button>Add item</button>
+	</div>
+
+	<ul>
+		
+	</ul>
+	
+<script>
+	var input = document.querySelector('input');
+	var btn = document.querySelector('button');
+	var ul = document.querySelector('ul');
+
+	btn.onclick = function() {
+		var value = input.value;
+		input.value = '';
+
+		var li = document.createElement('li');
+		var scan = document.createElement('scan');
+		var btn2 = document.createElement('button');
+
+		scan.textContent = value;
+		btn2.textContent = 'Delete';
+
+		li.appendChild(scan);
+		li.appendChild(btn2);
+		ul.appendChild(li);
+
+		btn2.onclick = function(e) {
+			ul.removeChild(li);
+		}
+		input.focus();
+	}
+</script>
+</body>
+</html>
